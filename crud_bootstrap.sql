@@ -1,10 +1,18 @@
 /* Get Heroku ClearDB connection information */
-$cleardb_url      = parse_url(getenv("CLEARDB_DATABASE_URL"));
+/* $cleardb_url      = parse_url(getenv("CLEARDB_DATABASE_URL"));
 $cleardb_server   = $cleardb_url["host"];
 $cleardb_username = $cleardb_url["user"];
 $cleardb_password = $cleardb_url["pass"];
-$cleardb_db       = substr($cleardb_url["path"],1);
+$cleardb_db       = substr($cleardb_url["path"],1);*/
 
+$url=parse_url(getenv("CLEARDB_DATABASE_URL"));
+
+$server = $url["host"];
+$username = $url["user"];
+$password = $url["pass"];
+$db = substr($url["path"], 1);
+
+$conn = new mysqli($server, $username, $password, $db);
 
 $active_group = 'default';
 $query_builder = TRUE;
@@ -13,7 +21,7 @@ $db['default'] = array(
     'dsn'    => '',
     'hostname' => 'us-cdbr-iron-east-01.cleardb.net',
     'username' => 'b97129e9c29c99',
-    'password' => '9e4e034',
+    'password' => '9e4e0340',
     'database' => 'heroku_b4f831afe5654f5',
     'dbdriver' => 'mysqli',
     'dbprefix' => '',
