@@ -11,10 +11,10 @@ $query_builder = TRUE;
 
 $db['default'] = array(
     'dsn'    => '',
-    'hostname' => $cleardb_server,
-    'username' => $cleardb_username,
-    'password' => $cleardb_password,
-    'database' => $cleardb_db,
+    'hostname' => 'us-cdbr-iron-east-01.cleardb.net',
+    'username' => 'b97129e9c29c99',
+    'password' => '9e4e034',
+    'database' => 'heroku_b4f831afe5654f5',
     'dbdriver' => 'mysqli',
     'dbprefix' => '',
     'pconnect' => FALSE,
