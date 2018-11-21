@@ -20,9 +20,11 @@ $quser = mysqli_query($conn, "select * from `user`");
 			<td>
 				<?php echo $urow['lastname']; ?>
 			</td>
-			<td><button class="btn btn-success" data-toggle="modal" data-target="#edit<?php echo $urow['userid']; ?>"><span
-					 class="glyphicon glyphicon-pencil"></span> Edit</button> | <button class="btn btn-danger delete" value="<?php echo $urow['userid']; ?>"><span
-					 class="glyphicon glyphicon-trash"></span> Delete</button>
+			<td>
+				<button class="btn btn-success btn-block" data-toggle="modal" data-target="#edit<?php echo $urow['userid']; ?>">
+				Edit</button>
+				<button class="delete btn btn-danger btn-block" value="<?php echo $urow['userid']; ?>">
+				Delete</button>
 				<?php include 'edit_modal.php';?>
 			</td>
 		</tr>

@@ -36,7 +36,7 @@ include 'conn.php';
 
 						<h4 class="card-title text-center font-weight-bold">CRUD-App (with MySQL, AJAX/jQuery)</h4>
 
-						<form class="form-inline">
+						<form>
 							<div class="form-group">
 								<label class="mr-2">Firstname:</label>
 								<input type="text" id="firstname" class="form-control">
@@ -47,7 +47,7 @@ include 'conn.php';
 							</div>
 							<div class="form-group">
 								<button type="button" id="addnew" 
-									class="btn btn-lg btn-primary text-uppercase ml-3">Add</button>
+									class="btn btn-primary btn-lg btn-block mt-3 text-uppercase font-weight-bold">Add</button>
 							</div>
 						</form>
 

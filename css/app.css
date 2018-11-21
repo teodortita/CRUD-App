@@ -21,16 +21,8 @@ body {
     padding: 2rem;
 }
 
-.form-inline {
-    margin-top: -5%;
-}
-
-.form-inline .btn {
-    font-weight: bold;
-    padding: 0.5rem;
-}
-
 .form-group {
+    margin-top: -5%;
     padding-top: 5%;
 }
 
