@@ -29,7 +29,7 @@ include 'conn.php';
 <body>
 	<div class="container">
 		<div class="row">
-			<div class="col-md-6">
+			<div class="col-md-6 offset-md-3">
 				<div class="card my-5">
 					<div class="card-body">
 
