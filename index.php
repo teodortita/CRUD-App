@@ -5,136 +5,61 @@ include 'conn.php';
 <html lang="en">
 
 <head>
-	<meta charset="UTF-8" name="viewport" content="width-device=width, initial-scale=1" />
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>CRUD-App</title>
-
-	<!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-	 crossorigin="anonymous">
 
 	<!-- Latest minified jQuery -->
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
 	 crossorigin="anonymous"></script>
 
-	<!-- Latest compiled and minified JavaScript -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	 crossorigin="anonymous">
+
+	<!-- Optional JavaScript -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
 	 crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+	 crossorigin="anonymous"></script>
+
+	<link rel="stylesheet" href="css/main.css"/>
 </head>
 
 <body>
-	<div class="row">
-		<div class="col-md-3">
-		</div>
-		<div class="col-md-6 offset-md-3 jumbotron">
-			<div class="row">
-				<div class="col-lg-12">
-					<h2 class="text-center text-primary">CRUD-App (with AJAX/jQuery)</h2>
-					<hr>
-					<div class="mx-5">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6">
+				<div class="card my-5">
+					<div class="card-body">
+
+						<h4 class="card-title text-center font-weight-bold">CRUD-App (with MySQL, AJAX/jQuery)</h4>
+
 						<form class="form-inline">
 							<div class="form-group">
-								<label>Firstname:</label>
+								<label class="mr-2">Firstname:</label>
 								<input type="text" id="firstname" class="form-control">
 							</div>
 							<div class="form-group">
-								<label>Lastname:</label>
+								<label class="mr-2">Lastname:</label>
 								<input type="text" id="lastname" class="form-control">
 							</div>
 							<div class="form-group">
-								<button type="button" id="addnew" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> Add</button>
+								<button type="button" id="addnew" 
+									class="btn btn-lg btn-primary text-uppercase ml-3">Add</button>
 							</div>
 						</form>
+
+						<hr class="mt-3">
+						<div id="userTable"></div>
+
 					</div>
 				</div>
-			</div>
-			<br>
-			<div class="row">
-				<div id="userTable"></div>
 			</div>
 		</div>
 	</div>
 </body>
-<script type="text/javascript">
-	$(document).ready(function () {
-		showUser();
 
-		//Add
-		$(document).on('click', '#addnew', function () {
-			if ($('#firstname').val() == "" || $('#lastname').val() == "") {
-				alert('Please input data first');
-			} else {
-				$firstname = $('#firstname').val();
-				$lastname = $('#lastname').val();
-				$.ajax({
-					type: "POST",
-					url: "addnew.php",
-					data: {
-						firstname: $firstname,
-						lastname: $lastname,
-						add: 1,
-					},
-					success: function () {
-						showUser();
-					}
-				});
-			}
-		});
-
-		//Delete
-		$(document).on('click', '.delete', function () {
-			$id = $(this).val();
-			$.ajax({
-				type: "POST",
-				url: "delete.php",
-				data: {
-					id: $id,
-					del: 1,
-				},
-				success: function () {
-					showUser();
-				}
-			});
-		});
-
-		//Update
-		$(document).on('click', '.updateuser', function () {
-			$uid = $(this).val();
-			$('#edit' + $uid).modal('hide');
-			$('body').removeClass('modal-open');
-			$('.modal-backdrop').remove();
-			$ufirstname = $('#ufirstname' + $uid).val();
-			$ulastname = $('#ulastname' + $uid).val();
-			$.ajax({
-				type: "POST",
-				url: "update.php",
-				data: {
-					id: $uid,
-					firstname: $ufirstname,
-					lastname: $ulastname,
-					edit: 1,
-				},
-				success: function () {
-					showUser();
-				}
-			});
-		});
-
-	});
-
-	//Show
-	function showUser() {
-		$.ajax({
-			url: 'show_user.php',
-			type: 'POST',
-			async: false,
-			data: {
-				show: 1
-			},
-			success: function (response) {
-				$('#userTable').html(response);
-			}
-		});
-	}
-</script>
+<script type="text/javascript" src="scripts/script.js"></script>
 
 </html>
