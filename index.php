@@ -24,6 +24,7 @@ include 'conn.php';
 	 crossorigin="anonymous"></script>
 
 	<link rel="stylesheet" href="css/app.css"/>
+	<link rel="shortcut icon" href="/favicon.ico">
 </head>
 
 <body>
