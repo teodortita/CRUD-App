@@ -44,10 +44,9 @@ body {
 }
 
 #footer {
-    position: relative;
-    bottom: 0;
-    width: 100%;
-    padding: 15px;
+    margin-top: 30px;
+    padding: 20px;
     background: whitesmoke;
     border-top: 1.5px solid black;
+    border-bottom: 1.5px solid black;
 }
