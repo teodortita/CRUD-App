@@ -56,7 +56,9 @@ include 'conn.php';
 		</div>
 	</div>
 	<footer id="footer" class="text-center">
-		<p>Made with &#x1F5A4; by <a href="https://linkedin.com/in/teodor-tita">Teodor</a></p>
+		<p>Made with &#x1F5A4; by 
+			<a href="https://linkedin.com/in/teodor-tita">Teodor</a>
+		</p>
 	</footer>
 </body>
 
