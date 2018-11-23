@@ -33,9 +33,7 @@ include 'conn.php';
 			<div class="col-md-6 offset-md-3 mt-5">
 				<div class="card my-5">
 					<div class="card-body">
-
 						<h4 class="card-title text-center font-weight-bold">CRUD-App (with MySQL, AJAX/jQuery)</h4>
-
 						<form>
 							<div class="form-group">
 								<label class="mr-2">Firstname:</label>
@@ -50,10 +48,8 @@ include 'conn.php';
 									class="btn btn-primary btn-lg btn-block mt-3 text-uppercase font-weight-bold">Add</button>
 							</div>
 						</form>
-
 						<hr class="mt-3">
 						<div id="userTable"></div>
-
 					</div>
 				</div>
 			</div>
